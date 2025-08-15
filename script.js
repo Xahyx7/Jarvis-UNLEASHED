@@ -7,8 +7,11 @@ class JarvisAISystem {
         this.isListening = false;
         this.conversationHistory = [];
 
-        // Backend URL - Change if your backend runs on different port
-        this.backendURL = "http://localhost:3000";
+        // Around line 15 in script.js
+this.backendURL = window.location.hostname === 'localhost' 
+    ? "http://localhost:3000"
+    : "https://jarvis-ai-backend-gz9x.onrender.com"; // Replace with your actual Render URL
+
         
         this.initialize();
     }
